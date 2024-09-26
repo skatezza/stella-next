@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useState, useRef, useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+import { Transition } from "@headlessui/react";
 import Particles from "./particles";
-import Highlighter, { HighlighterItem } from "./highlighter";
+import { useI18n } from "@/locale/client";
 
 import CarouselImg01 from "@/public/images/carousel-icon-01.svg";
 import CarouselImg02 from "@/public/images/carousel-icon-02.svg";
 import CarouselImg03 from "@/public/images/carousel-icon-03.svg";
 import CarouselImg04 from "@/public/images/carousel-icon-04.svg";
 import CarouselImg05 from "@/public/images/carousel-icon-05.svg";
+import Highlighter, { HighlighterItem } from "./highlighter";
 
 // Import Swiper
 import Swiper, { Navigation } from "swiper";
@@ -18,6 +20,7 @@ import { MoveLeft, MoveRight } from "lucide-react";
 Swiper.use([Navigation]);
 
 export default function TestimonialsCarousel() {
+  const t = useI18n();
   const [swiperInitialized, setSwiperInitialized] = useState<boolean>(false);
 
   useEffect(() => {
@@ -54,16 +57,14 @@ export default function TestimonialsCarousel() {
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <div>
               <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
-                The security first platform
+                {t("home.testimonialsCarousel.securityFirstPlatform")}
               </div>
             </div>
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-              Build Your MVP
+              {t("home.testimonialsCarousel.buildYourMVP")}
             </h2>
             <p className="text-lg text-slate-400">
-              All the lorem ipsum generators on the Internet tend to repeat
-              predefined chunks as necessary, making this the first true
-              generator on the Internet.
+              {t("home.testimonialsCarousel.description")}
             </p>
           </div>
 
@@ -101,10 +102,10 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          Custom Web Apps
+                          {t("home.testimonialsCarousel.customWebApps")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          Everything you need to build your MVP.
+                          {t("home.testimonialsCarousel.everythingYouNeed")}
                         </div>
                       </div>
                       <div className="text-right">
@@ -112,7 +113,7 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          Learn More{" "}
+                          {t("home.testimonialsCarousel.learnMore")}{" "}
                           <MoveRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
                           </MoveRight>
@@ -146,11 +147,12 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          Bot Detection
+                          {t("home.testimonialsCarousel.botDetection")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          Incorporate rich user profiling, and facilitate more
-                          transactions.
+                          {t(
+                            "home.testimonialsCarousel.incorporateRichUserProfiling"
+                          )}
                         </div>
                       </div>
                       <div className="text-right">
@@ -158,7 +160,7 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          Learn More{" "}
+                          {t("home.testimonialsCarousel.learnMore")}{" "}
                           <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
                           </span>
@@ -192,11 +194,12 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          Social integrations
+                          {t("home.testimonialsCarousel.socialIntegrations")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          Incorporate rich user profiling, and facilitate more
-                          transactions.
+                          {t(
+                            "home.testimonialsCarousel.incorporateRichUserProfiling"
+                          )}
                         </div>
                       </div>
                       <div className="text-right">
@@ -204,7 +207,7 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          Learn More{" "}
+                          {t("home.testimonialsCarousel.learnMore")}{" "}
                           <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
                           </span>

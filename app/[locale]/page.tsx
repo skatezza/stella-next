@@ -12,9 +12,19 @@ import { getI18n } from "@/locale/server";
 
 export default async function Home() {
   const t = await getI18n();
+
   return (
     <>
+      <Hero />
+      <Clients />
       <Features />
+      <Features02 />
+      <Features03 />
+      <TestimonialsCarousel />
+      <Features04 />
+      <Pricing />
+      <Testimonials />
+      <Cta />
     </>
   );
 }

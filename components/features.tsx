@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Transition } from "@headlessui/react";
 import Particles from "./particles";
 import Illustration from "@/public/images/glow-top.svg";
+import { useI18n } from "@/locale/client";
 
 interface FeatureItem {
   subtitle: string;
@@ -20,17 +21,16 @@ interface FeaturesSectionProps {
 }
 
 export default function Features() {
+  const t = useI18n();
+
   const featuresData: FeaturesSectionProps = {
-    title: "Why Trust Us?",
-    description:
-      "Define access roles for the end-users, and extend your authorization capabilities to implement dynamic access control.",
+    title: t("home.features.title"),
+    description: t("home.features.description"),
     features: [
       {
-        title: "Fast & Efficient",
-        subtitle:
-          "We will get you from idea-stage to MVP in weeks, instead of months. You can expect a world-class product with a fast-paced development.",
-        description:
-          "Delegate the work to us. We will build your product under 20 days.",
+        title: t("home.features.title"),
+        subtitle: t("home.features.feature1.subtitle"),
+        description: t("home.features.feature1.description"),
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +50,9 @@ export default function Features() {
         ),
       },
       {
-        title: "Scalable Technologies",
-        subtitle:
-          "We will select the latest technologies and coding best practices to ensure your prototype or product has the highest quality built feel.",
-        description:
-          "Ex-FAANG/Big Tech Product Managers, Engineers, and Designers",
+        title: t("home.features.feature2.title"),
+        subtitle: t("home.features.feature2.subtitle"),
+        description: t("home.features.feature2.description"),
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,10 +73,9 @@ export default function Features() {
         ),
       },
       {
-        title: "Support",
-        subtitle:
-          "We will provide you with initial marketing support to get your MVP off the ground.",
-        description: "Feature 3 description",
+        title: t("home.features.feature3.title"),
+        subtitle: t("home.features.feature3.subtitle"),
+        description: t("home.features.feature3.description"),
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +127,7 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({
   features,
 }) => {
   const [activeTab, setActiveTab] = useState<number>(0);
-
+  const t = useI18n();
   return (
     <section>
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
@@ -162,14 +159,16 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                 {/* Content #1 */}
                 <div>
                   <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3 text-xl">
-                    {title}
+                    {t("home.features.badgeText")}
                   </div>
                 </div>
                 <h3 className="h3 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-3">
-                  {features[activeTab].title}
+                  {/* @ts-ignore */}
+                  {t(`home.features.feature${activeTab + 1}.title`)}
                 </h3>
                 <p className="text-lg text-slate-400 mb-8">
-                  {features[activeTab].subtitle}
+                  {/* @ts-ignore */}
+                  {t(`home.features.feature${activeTab + 1}.description`)}
                 </p>
                 <div className="mt-8 max-w-xs max-md:mx-auto space-y-2">
                   {features.map((feature, index) => (
@@ -183,7 +182,10 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({
                       onClick={() => setActiveTab(index)}
                     >
                       {feature.icon}
-                      <span className="ml-3">{feature.title}</span>
+                      <span className="ml-3">
+                        {/* @ts-ignore */}
+                        {t(`home.features.feature${index + 1}.title`)}
+                      </span>
                     </button>
                   ))}
                 </div>

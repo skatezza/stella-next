@@ -1,9 +1,9 @@
-we need a way to manage i18n for English and French throughout our app.
+we need a way to modify all our i18n translation files for English and French, to fit our current components throughout our app.
 
-• we do have a Providers file for i18n (@/components/Providers, which is using I18nProviderClient from "@/locale/client";)
+• we do have server-side and client-side i18n setup (@/locale/server.ts and @/locale/client.ts)
 • we do have a file for the translations (@/locale/en.ts and @/locale/fr.ts)
 • our app's homepage is built under @/app/[locale]/page.tsx
-• we need to make the translations available for the homepage's components:
+• homepage's components:
         - Hero from "@/components/hero";
         - Clients from "@/components/clients";
         - Features from "@/components/features";

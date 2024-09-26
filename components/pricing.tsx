@@ -8,6 +8,7 @@ import { Button } from "./button";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import { Badge } from "./badge";
+import { useI18n } from "@/locale/client";
 
 // Define types for our pricing data
 type PlanFeature = {
@@ -124,13 +125,6 @@ const pricingData: PricingData = {
   ],
 };
 
-// Add section titles
-const sectionTitles: SectionTitle[] = [
-  { name: "Core Services", startIndex: 0 },
-  { name: "Additional Features", startIndex: 6 },
-  { name: "Support", startIndex: 10 },
-];
-
 // Reusable components
 const PlanHeader = ({
   plan,
@@ -240,6 +234,111 @@ const SectionTitle = ({ title }: { title: string }) => (
 
 export default function Pricing() {
   const [annual, setAnnual] = useState<boolean>(true);
+  const t = useI18n();
+
+  // Add section titles
+  const sectionTitles: SectionTitle[] = [
+    { name: t("pricing.sectionTitle1"), startIndex: 0 },
+    { name: t("pricing.sectionTitle2"), startIndex: 6 },
+    { name: t("pricing.sectionTitle3"), startIndex: 10 },
+  ];
+
+  const pricingData: PricingData = {
+    plans: {
+      starter: {
+        name: t("pricing.plans.starter.name"),
+        price: { monthly: 2999, annual: 2499 },
+      },
+      pro: { name: "Pro", price: { monthly: 4999, annual: 4499 } },
+      enterprise: {
+        name: "Enterprise",
+        price: { monthly: 7999, annual: 6999 },
+      },
+    },
+    features: [
+      {
+        name: t("pricing.features.feature1"),
+        starter: t("pricing.features.feature1.starter"),
+        pro: t("pricing.features.feature1.pro"),
+        enterprise: t("pricing.features.feature1.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature2"),
+        starter: t("pricing.features.feature2.starter"),
+        pro: t("pricing.features.feature2.pro"),
+        enterprise: t("pricing.features.feature2.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature3"),
+        starter: t("pricing.features.feature3.starter"),
+        pro: t("pricing.features.feature3.pro"),
+        enterprise: t("pricing.features.feature3.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature4"),
+        starter: "Basic",
+        pro: "Advanced",
+        enterprise: "Unlimited",
+      },
+      {
+        name: "Database Setup",
+        starter: "Basic",
+        pro: "Advanced",
+        enterprise: "Unlimited",
+      },
+      {
+        name: "Email Systems (Newsletter, Contact Form)",
+        starter: "Basic",
+        pro: "Advanced",
+        enterprise: "Unlimited",
+      },
+      {
+        name: "Essential Integrations",
+        starter: "2",
+        pro: "5",
+        enterprise: "Unlimited",
+      },
+      {
+        name: "Setup and Onboarding Sessions",
+        starter: "2 hours",
+        pro: "5 hours",
+        enterprise: "10 hours",
+      },
+      {
+        name: "Performance Optimization",
+        starter: "Basic",
+        pro: "Advanced",
+        enterprise: "Premium",
+      },
+      {
+        name: "Responsive UI/UX Design",
+        starter: "Desktop & Mobile",
+        pro: "Desktop & Mobile",
+        enterprise: "Desktop & Mobile",
+      },
+      {
+        name: "Source Code Access",
+        starter: "Fully accessible",
+        pro: "Fully accessible",
+        enterprise: "Fully accessible",
+      },
+      { name: "Custom Branding", starter: false, pro: true, enterprise: true },
+      { name: "Blog", starter: false, pro: true, enterprise: true },
+      { name: "Priority Support", starter: false, pro: true, enterprise: true },
+      {
+        name: "Dedicated Project Manager",
+        starter: false,
+        pro: false,
+        enterprise: true,
+      },
+      {
+        name: "Scalability Planning",
+        starter: false,
+        pro: false,
+        enterprise: true,
+      },
+    ],
+  };
 
   return (
     <>
@@ -261,21 +360,16 @@ export default function Pricing() {
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
               <div>
                 <div className="inline-flex font-medium pb-3 ">
-                  <Badge
-                    variant="default"
-                    className="rounded-full bg-indigo-500"
-                  >
-                    <AnimatedShinyText>Pricing plans</AnimatedShinyText>
-                  </Badge>
+                  <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
+                    {t("pricing.badgeText")}
+                  </div>
                 </div>
               </div>
               <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-                All-inclusive pricing
+                {t("pricing.title")}
               </h2>
               <p className="text-lg text-slate-400">
-                All the lorem ipsum generators on the Internet tend to repeat
-                predefined chunks as necessary, making this the first true
-                generator on the Internet.
+                {t("pricing.description")}
               </p>
             </div>
             {/* Pricing tabs */}

@@ -40,10 +40,7 @@ export default async function Hero() {
                 >
                   <span className="relative inline-flex items-center">
                     <CircleDot className="mr-2 size-3 text-green-500 fill-green-500" />
-                    {t("home.hero.slots_left", {
-                      slots: 3,
-                      month: "September",
-                    })}
+                    {t("home.hero.slots_left")}
                   </span>
                 </a>
               </div>
@@ -71,7 +68,7 @@ export default async function Hero() {
                   className="btn text-slate-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white w-full transition duration-150 ease-in-out group"
                   href="#0"
                 >
-                  Get Started{" "}
+                  {t("home.hero.callToAction1")}
                   <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                     -&gt;
                   </span>
@@ -90,7 +87,7 @@ export default async function Hero() {
                   >
                     <path d="m1.999 0 1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 0l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM11.999 10l1 2-1 2 2-1 2 1-1-2 1-2-2 1zM6.292 7.586l2.646-2.647L11.06 7.06 8.413 9.707zM0 13.878l5.586-5.586 2.122 2.121L2.12 16z" />
                   </svg>
-                  <span>Book a Call</span>
+                  <span>{t("home.hero.callToAction2")}</span>
                 </a>
               </div>
             </div>

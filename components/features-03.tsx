@@ -2,8 +2,11 @@ import Image from "next/image";
 import Highlighter, { HighlighterItem } from "./highlighter";
 
 import FeatureImg04 from "@/public/images/feature-image-04.png";
+import { getI18n } from "@/locale/server";
 
-export default function Features03() {
+export default async function Features03() {
+  const t = await getI18n();
+
   return (
     <section className="relative">
       {/* Blurred shape */}
@@ -38,10 +41,10 @@ export default function Features03() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-              More than a login box
+              {t("home.features03.title")}
             </h2>
             <p className="text-lg text-slate-400">
-              There are many variations available, but the majority have
+              {t("home.features03.subtitle")}
               suffered alteration in some form, by injected humour, or
               randomised words which don't look even slightly believable.
             </p>

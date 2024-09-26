@@ -15,49 +15,151 @@ export default {
   home: {
     metaTitle: "TinyBots | Get your MVP in weeks, not months",
     hero: {
-      slots_left: "There are {slots} slots left in {month}",
-      startTitle: "We are",
-      endTitle: "creating websites and applications for your business",
+      slots_left: "There is 1 slot left in September",
       title: "Turn Your Ideas Into an MVP in Weeks, Not Months",
       subtitle:
         "Launch your MVP in just a few weeks—efficient, quick, and cost-effective. We handle everything.",
-      pixel: "Beyond pixels",
-      years: "years of experience",
+      callToAction1: "Get started",
+      callToAction2: "Book a call",
     },
     features: {
+      badgeText: "Why Trust Us?",
       title: "Why Trust Us?",
-      fast: {
+      description: "We offer a range of services to meet your needs.",
+      feature1: {
         title: "Fast & Efficient",
-        subtitle:
-          "We will get you from idea-stage to MVP in weeks, instead of months. You can expect a world-class product with a fast-paced development.",
+        subtitle: "We deliver results quickly and efficiently.",
+        description:
+          "Our team works tirelessly to ensure your project is completed on time.",
       },
-      scalable: {
+      feature2: {
         title: "Scalable Technologies",
-        subtitle:
-          "We will select the latest technologies and coding best practices to ensure your prototype or product has the highest quality built feel.",
+        subtitle: "We use cutting-edge, scalable technologies.",
+        description: "Our solutions are built to grow with your business.",
       },
-      support: {
+      feature3: {
         title: "Support",
-        subtitle:
-          "We will provide you with initial marketing support to get your MVP off the ground.",
+        subtitle: "We provide ongoing support.",
+        description:
+          "Our team is always available to help you with any issues.",
       },
     },
+    features02: {
+      title: "Faster. Smarter.",
+      subtitle:
+        "There are many variations available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+      feature1: {
+        title: "Fast & Efficient",
+        subtitle: "We deliver results quickly and efficiently.",
+        description:
+          "Our team works tirelessly to ensure your project is completed on time.",
+      },
+      feature2: {
+        title: "Scalable Technologies",
+        subtitle: "We use cutting-edge, scalable technologies.",
+        description: "Our solutions are built to grow with your business.",
+      },
+      feature3: {
+        title: "Support",
+        subtitle: "We provide ongoing support.",
+        description:
+          "Our team is always available to help you with any issues.",
+      },
+      feature4: {
+        title: "Security",
+        subtitle: "We ensure the security of your data.",
+        description: "Our team ensures that your data is secure and protected.",
+      },
+      feature5: {
+        title: "Scalability",
+        subtitle: "We ensure the scalability of your data.",
+        description:
+          "Our team ensures that your data is scalable and protected.",
+      },
+      feature6: {
+        title: "Performance",
+        subtitle: "We ensure the performance of your data.",
+        description:
+          "Our team ensures that your data is performant and protected.",
+      },
+      feature7: {
+        title: "Security",
+        subtitle: "We ensure the security of your data.",
+        description: "Our team ensures that your data is secure and protected.",
+      },
+      feature8: {
+        title: "Security",
+        subtitle: "We ensure the security of your data.",
+        description: "Our team ensures that your data is secure and protected.",
+      },
+    },
+    features03: {
+      title: "Faster. Smarter.",
+      subtitle:
+        "There are many variations available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+    },
+    features04: {
+      sectionTitle1: "Why trust us?",
+      sectionTitle2: "Powerful search",
+      sectionTitle3: "User Management",
+      title: "Why trust us?",
+      subtitle:
+        "Many desktop publishing packages and web page editors now use lorem ipsum as their default model text, and a search will uncover many web sites still in their infancy.",
+      feature1: {
+        title: "Speed & Efficiency",
+        description:
+          "Our team works tirelessly to ensure your project is completed on time.",
+      },
+      feature2: {
+        title: "Powerful search",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+      feature3: {
+        title: "User Management",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+      feature4: {
+        title: "Analytics",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+      feature5: {
+        title: "Notifications",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+      feature6: {
+        title: "Integrations",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+      feature7: {
+        title: "Privacy",
+        description:
+          "Login box must find the right balance for the user convenience, privacy and security.",
+      },
+    },
+    testimonialsCarousel: {
+      securityFirstPlatform: "Security-First Platform",
+      buildYourMVP: "Build Your MVP in Weeks, Not Months",
+      description:
+        "We offer a range of services to help you build your MVP quickly and efficiently.",
+      customWebApps: "Custom Web Apps",
+      everythingYouNeed: "Everything you need to build your web application.",
+      botDetection: "Bot Detection",
+      incorporateRichUserProfiling:
+        "Incorporate rich user profiling and facilitate more transactions.",
+      socialIntegrations: "Social Integrations",
+      learnMore: "Learn More",
+    },
     experience: {
-      startTitle: "Our",
-      endTitle: "customized services",
-      websiteTitle: "Website creation & Design",
-      websiteDescription:
-        "We design bespoke websites that reflect the essence of your brand. We also offer UI / UX design services.",
-      socialTitle: "Brand Identity & Social Networks",
-      socialDescription:
-        "We help you create a coherent brand identity (logo, graphic chart, etc.) and distribute it on social networks.",
+      badgeText: "Our",
       appTitle: "Creation of Web & Mobile applications",
       appDescription:
         "We develop high-performance, scalable and secure web and mobile applications. We use the latest technologies on the market and integrate AI into our solutions where necessary.",
-      subtitle: "Web expertise that makes the difference",
-      offer: "Download our service offer",
-      description: "Web expertise that makes a difference",
-      fileName: "offer-en.pdf",
+      ctaText: "Get started",
     },
     work: {
       title: "Check out our latest work",
@@ -66,7 +168,7 @@ export default {
       view: "View Work",
     },
     testimonials: {
-      title: "Here’s what past clients are saying about Otopio",
+      title: "Here's what past clients are saying about Otopio",
       subtitle:
         "Experience speaks, but our clients shout louder. Their feedback underscores our dedication and shared successes.",
       emergence: {
@@ -79,7 +181,7 @@ export default {
       alteretgo: {
         headline: "Beyond Expectations!",
         content:
-          "I had a vision, and Otopio not only realized it but elevated it to levels I hadn’t imagined. An exceptional team with an unmatched work ethic.",
+          "I had a vision, and Otopio not only realized it but elevated it to levels I hadn't imagined. An exceptional team with an unmatched work ethic.",
         authorName: "Sofian L.",
         authorRole: "CEO of Alter&Go",
       },
@@ -156,79 +258,122 @@ export default {
     fireterminator:
       "Fire Terminator is a company that offers a plant-based solution that suppresses all types of fires in seconds. We designed their e-commerce website.",
   },
-  contact: {
-    metaTitle: "Contact us | Otopio",
-    title: "How can we help you? Let’s get in touch",
-    startSubtitle: "You can",
-    endSubtitle: "reach us the following",
-    phone: {
-      title: "Call us",
-      subtitle: "We available weekdays from 9AM to 5PM",
-      contact: "+1 (514) 430-5919",
+  pricing: {
+    badgeText: "Pricing plans",
+    title: "All-inclusive pricing",
+    description:
+      "Many desktop publishing packages and web page editors now use lorem ipsum as their default model text, and a search will uncover many web sites still in their infancy.",
+    sectionTitle1: "Core Services",
+    sectionTitle2: "Additional Features",
+    sectionTitle3: "Support",
+    plans: {
+      starter: {
+        name: "Starter",
+      },
     },
-    email: {
-      title: "Email us",
-      subtitle: "We will usually email you back within an hour",
-      contact: "contact@otopio.net",
+    features: {
+      feature1: "Custom Web App Development",
+      "feature1.starter": "Basic",
+      "feature1.pro": "Advanced",
+      "feature1.enterprise": "Complex",
+      feature2: "UI/UX Design",
+      "feature2.starter": "Basic",
+      "feature2.pro": "Advanced",
+      "feature2.enterprise": "Premium",
+      feature3: "User Authentication",
+      "feature3.starter": "Basic",
+      "feature3.pro": "Advanced",
+      "feature3.enterprise": "Unlimited",
+      feature4: "Database Setup",
+      "feature4.starter": "Basic",
+      "feature4.pro": "Advanced",
+      "feature4.enterprise": "Complex",
+      feature5: "Email Systems (Newsletter, Contact Form)",
+      "feature5.starter": "Basic",
+      "feature5.pro": "Advanced",
+      "feature5.enterprise": "Complex",
+      feature6: "API Integration",
+      "feature6.starter": "Basic",
+      "feature6.pro": "Advanced",
+      "feature6.enterprise": "Complex",
+      feature7: "Security",
+      "feature7.starter": "Basic",
+      "feature7.pro": "Advanced",
+      "feature7.enterprise": "Complex",
+      feature8: "Maintenance & Updates",
+      "feature8.starter": "Basic",
+      "feature8.pro": "Advanced",
+      "feature8.enterprise": "Complex",
+      feature9: "24/7 Support",
+      "feature9.starter": "Basic",
+      "feature9.pro": "Advanced",
+      "feature9.enterprise": "Complex",
     },
-    form: {
-      title: "Fill out the form below to get started",
-      optional: "Optional",
-      subtitle:
-        "Dive into the digital era with Otopio. We're just one message away.",
-      name: {
-        label: "Name",
-        placeholder: "Your name",
-      },
-      email: {
-        label: "Email",
-        placeholder: "Your email address",
-      },
-      phone: {
-        label: "Phone",
-        placeholder: "Your phone number",
-      },
-      message: {
-        label: "How can we help you?",
-        description: "Max 500 characters",
-        placeholder: "Tell us a little bit about your project...",
-      },
-      services: {
-        label: "Expected services",
-        design: "Design UX/UI",
-        website: "Website creation",
-        app: "Web and mobile app creation",
-        social: "Social media management",
-        consulting: "Consulting",
-        other: "Other",
-      },
-      submit: "Get started",
-      submitConfirmation:
-        "Your message has been sent! We will get back to you as soon as possible.",
+    sectionTitles: {
+      feature1: "Custom Web App Development",
+      feature2: "UI/UX Design",
+      feature3: "User Authentication",
+      feature4: "Database Setup",
+      feature5: "Email Systems (Newsletter, Contact Form)",
+      feature6: "API Integration",
+      feature7: "Security",
+      feature8: "Maintenance & Updates",
+      feature9: "Essential Integrations",
+      feature10: "Setup and Onboarding Sessions",
+      feature11: "Performance Optimization",
+      feature12: "Responsive UI/UX Design",
+      feature13: "Source Code Access",
+      feature14: "Custom Branding",
+      feature15: "Blog",
+      feature16: "Priority Support",
+      feature17: "Dedicated Project Manager",
+      feature18: "Scalability Planning",
     },
+  },
+  experience: {
+    appTitle: "Get your MVP in weeks, not months",
+    appDescription:
+      "Launch your MVP in just a few weeks—efficient, quick, and cost-effective. We handle everything.",
   },
   footer: {
-    title: "Lets make something great together",
-    rights: "All rights reserved",
-  },
-  about: {
-    metaTitle: "About us | Otopio",
-    hero: {
-      startTitle: "A Fusion of",
-      endTitle: "Passion and Innovation",
-      paragraph1:
-        "At Otopio, technology and creativity become one through our dedicated team of passionate professionals. We are led by a visionary CTO, supported by a renowned UI/UX designer, and bolstered by a dynamic team of developers. Each member brings unique expertise, creative energy, and unwavering commitment to turn your ideas into exceptional digital realities.",
-      paragraph2:
-        "We set the bar high in terms of quality and performance. Our goal is not just to meet your expectations, but to exceed them. We are dedicated to doing things right, to fully satisfying our clients, and to giving our best in every project. At Otopio, every detail matters, and each project is an opportunity to demonstrate our excellence and dedication.",
-      paragraph3:
-        "Otopio is synonymous with flexibility and adaptability. We understand that each client is unique, with varied needs and budgets. Whether you are a startup with limited resources, or an established company looking to redefine your digital presence, we are here for you. We welcome each project, big or small, with the same zeal, ready to adapt and innovate to realize your visions. Every client is precious, and each project is an exciting adventure towards new digital horizons.",
+    title: "Products",
+    rights: "All rights reserved.",
+    link: {
+      products: "Products",
+      features: "Features",
+      integrations: "Integrations",
+      pricing: "Pricing & Plans",
+      changelog: "Changelog",
+      method: "Our method",
     },
-    strenghts: {
-      startTitle: "Our core",
-      endTitle: "strengths",
-      subtitle:
-        "Delve into the heart of Otopio. Here's a snapshot of the skills and expertise that fuel our passion, drive our innovations, and set us apart in the digital realm.",
-      best: "The best of us !",
-    },
+    // products: {
+    //   title: "Products",
+    //   features: "Features",
+    //   integrations: "Integrations",
+    //   pricing: "Pricing & Plans",
+    //   changelog: "Changelog",
+    //   method: "Our method",
+    // },
+    // company: {
+    //   title: "Company",
+    //   about: "About us",
+    //   diversity: "Diversity & Inclusion",
+    //   blog: "Blog",
+    //   careers: "Careers",
+    //   financial: "Financial statements",
+    // },
+    // resources: {
+    //   title: "Resources",
+    //   community: "Community",
+    //   terms: "Terms of service",
+    //   report: "Report a vulnerability",
+    // },
+    // legals: {
+    //   title: "Legals",
+    //   refund: "Refund policy",
+    //   terms: "Terms & Conditions",
+    //   privacy: "Privacy policy",
+    //   brand: "Brand Kit",
+    // },
   },
 } as const;

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import Particles from "./particles";
+import { useI18n } from "@/locale/client";
 
 import Client01 from "@/public/images/tech1.svg";
 import Client02 from "@/public/images/tech2.svg";
@@ -17,6 +18,8 @@ import "swiper/swiper.min.css";
 Swiper.use([Autoplay]);
 
 export default function Clients() {
+  const t = useI18n();
+
   useEffect(() => {
     const carousel = new Swiper(".clients-carousel", {
       slidesPerView: "auto",
@@ -42,6 +45,9 @@ export default function Clients() {
         </div>
 
         <div className="py-12 md:py-16">
+          {/* <h2 className="text-center text-2xl font-bold text-slate-100 mb-8">
+            {t("home.clients.title")}
+          </h2> */}
           <div className="overflow-hidden">
             {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
             {/* * Custom styles in src/css/additional-styles/theme.scss */}

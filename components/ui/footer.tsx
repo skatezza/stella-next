@@ -1,4 +1,5 @@
 import Logo from "./logo";
+import { getI18n } from "@/locale/server";
 
 import { SVGProps } from "react";
 
@@ -48,46 +49,6 @@ const socialLinks = [
   { href: "#0", ariaLabel: "Github", icon: "github" },
 ];
 
-const footerColumns = [
-  {
-    title: "Products",
-    links: [
-      { href: "#0", text: "Features" },
-      { href: "#0", text: "Integrations" },
-      { href: "#0", text: "Pricing & Plans" },
-      { href: "#0", text: "Changelog" },
-      { href: "#0", text: "Our method" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { href: "#0", text: "About us" },
-      { href: "#0", text: "Diversity & Inclusion" },
-      { href: "#0", text: "Blog" },
-      { href: "#0", text: "Careers" },
-      { href: "#0", text: "Financial statements" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      { href: "#0", text: "Community" },
-      { href: "#0", text: "Terms of service" },
-      { href: "#0", text: "Report a vulnerability" },
-    ],
-  },
-  {
-    title: "Legals",
-    links: [
-      { href: "#0", text: "Refund policy" },
-      { href: "#0", text: "Terms & Conditions" },
-      { href: "#0", text: "Privacy policy" },
-      { href: "#0", text: "Brand Kit" },
-    ],
-  },
-];
-
 interface FooterColumnProps {
   title: string;
   links: Array<{ href: string; text: string }>;
@@ -95,6 +56,8 @@ interface FooterColumnProps {
 }
 
 function FooterColumn({ title, links, className }: FooterColumnProps) {
+  const t = getI18n();
+
   return (
     <div className={className}>
       <h6 className="text-sm text-slate-50 font-medium mb-2">{title}</h6>
@@ -133,7 +96,58 @@ function SocialLink({ href, ariaLabel, icon }: SocialLinkProps) {
   );
 }
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getI18n();
+
+  const footerColumns = [
+    {
+      title: t("footer.link.products"),
+      links: [
+        { href: "#0", text: t("footer.link.features") },
+        { href: "#0", text: t("footer.link.integrations") },
+        { href: "#0", text: t("footer.link.pricing") },
+        { href: "#0", text: t("footer.link.changelog") },
+        { href: "#0", text: t("footer.link.method") },
+      ],
+    },
+    // {
+    //   title: t("footer.products.title"),
+    //   links: [
+    //     { href: "#0", text: t("footer.products.features") },
+    //     { href: "#0", text: t("footer.products.integrations") },
+    //     { href: "#0", text: t("footer.products.pricing") },
+    //     { href: "#0", text: t("footer.products.changelog") },
+    //     { href: "#0", text: t("footer.products.method") },
+    //   ],
+    // },
+    // {
+    //   title: t("footer.company.title"),
+    //   links: [
+    //     { href: "#0", text: t("footer.company.about") },
+    //     { href: "#0", text: t("footer.company.diversity") },
+    //     { href: "#0", text: t("footer.company.blog") },
+    //     { href: "#0", text: t("footer.company.careers") },
+    //     { href: "#0", text: t("footer.company.financial") },
+    //   ],
+    // },
+    // {
+    //   title: t("footer.resources.title"),
+    //   links: [
+    //     { href: "#0", text: t("footer.resources.community") },
+    //     { href: "#0", text: t("footer.resources.terms") },
+    //     { href: "#0", text: t("footer.resources.report") },
+    //   ],
+    // },
+    // {
+    //   title: t("footer.legals.title"),
+    //   links: [
+    //     { href: "#0", text: t("footer.legals.refund") },
+    //     { href: "#0", text: t("footer.legals.terms") },
+    //     { href: "#0", text: t("footer.legals.privacy") },
+    //     { href: "#0", text: t("footer.legals.brand") },
+    //   ],
+    // },
+  ];
   return (
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -146,8 +160,8 @@ export default function Footer() {
                   <Logo />
                 </div>
                 <div className="text-sm text-slate-300">
-                  © TinyBots.chat <span className="text-slate-500">-</span> All
-                  rights reserved.
+                  © TinyBots.chat <span className="text-slate-500">-</span>{" "}
+                  {t("footer.rights")}
                 </div>
               </div>
               {/* Social links */}

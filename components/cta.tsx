@@ -1,4 +1,9 @@
-export default function Cta() {
+import { getI18n } from "@/locale/server";
+import { ArrowRight, MoveRight } from "lucide-react";
+
+export default async function Cta() {
+  const t = await getI18n();
+
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -41,26 +46,24 @@ export default function Cta() {
           <div className="max-w-3xl mx-auto text-center">
             <div>
               <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
-                On-demand design & development agency
+                {t("home.experience.badgeText")}
               </div>
             </div>
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
-              Launch your MVP with us
+              {t("home.experience.appTitle")}
             </h2>
             <p className="text-lg text-slate-400 mb-8">
-              All the lorem ipsum generators on the Internet tend to repeat
-              predefined chunks as necessary, making this the first true
-              generator on the Internet.
+              {t("home.experience.appDescription")}
             </p>
             <div>
               <a
                 className="btn text-slate-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white transition duration-150 ease-in-out group"
                 href="#0"
               >
-                Get Started{" "}
-                <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                {t("home.experience.ctaText")}
+                <ArrowRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                   -&gt;
-                </span>
+                </ArrowRight>
               </a>
             </div>
           </div>
