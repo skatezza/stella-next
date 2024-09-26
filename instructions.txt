@@ -1,0 +1,16 @@
+we need a way to manage i18n for English and French throughout our app.
+
+• we do have a Providers file for i18n (@/components/Providers, which is using I18nProviderClient from "@/locale/client";)
+• we do have a file for the translations (@/locale/en.ts and @/locale/fr.ts)
+• our app's homepage is built under @/app/[locale]/page.tsx
+• we need to make the translations available for the homepage's components:
+        - Hero from "@/components/hero";
+        - Clients from "@/components/clients";
+        - Features from "@/components/features";
+        - Features02 from "@/components/features-02";
+        - Features03 from "@/components/features-03";
+        - TestimonialsCarousel from "@/components/testimonials-carousel";
+        - Features04 from "@/components/features-04";
+        - Pricing from "@/components/pricing";
+        - Testimonials from "@/components/testimonials";
+        - Cta from "@/components/cta";

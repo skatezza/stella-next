@@ -33,13 +33,22 @@ module.exports = {
       },
       animation: {
         'endless': 'endless 20s linear infinite',
+				shimmer: "shimmer 8s infinite",
       },
       keyframes: {
         'endless': {
           '0%': { transform: 'translateY(0)' },
           '100%': { transform: 'translateY(-245px)' }
-        }
-      }
+        },
+        shimmer: {
+          '0%, 90%, 100%': {
+            'background-position': 'calc(-100% - var(--shimmer-width)) 0',
+					},
+					"30%, 60%": {
+						"background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
+      },
     },
   },
   plugins: [

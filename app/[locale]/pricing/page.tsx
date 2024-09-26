@@ -3,11 +3,6 @@
 import { useState } from "react";
 import React from "react";
 import Header from "@/components/ui/header";
-import AnimatedShinyText from "./shine-button";
-import { Button } from "./button";
-import { MoveRight } from "lucide-react";
-import Image from "next/image";
-import { Badge } from "./badge";
 
 // Define types for our pricing data
 type PlanFeature = {
@@ -59,24 +54,6 @@ const pricingData: PricingData = {
       enterprise: "Premium",
     },
     {
-      name: "User Authentication",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Database Setup",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Email Systems (Newsletter, Contact Form)",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
       name: "Essential Integrations",
       starter: "2",
       pro: "5",
@@ -94,20 +71,9 @@ const pricingData: PricingData = {
       pro: "Advanced",
       enterprise: "Premium",
     },
-    {
-      name: "Responsive UI/UX Design",
-      starter: "Desktop & Mobile",
-      pro: "Desktop & Mobile",
-      enterprise: "Desktop & Mobile",
-    },
-    {
-      name: "Source Code Access",
-      starter: "Fully accessible",
-      pro: "Fully accessible",
-      enterprise: "Fully accessible",
-    },
+    { name: "Responsive Design", starter: true, pro: true, enterprise: true },
+    { name: "Source Code Access", starter: true, pro: true, enterprise: true },
     { name: "Custom Branding", starter: false, pro: true, enterprise: true },
-    { name: "Blog", starter: false, pro: true, enterprise: true },
     { name: "Priority Support", starter: false, pro: true, enterprise: true },
     {
       name: "Dedicated Project Manager",
@@ -156,22 +122,23 @@ const PlanHeader = ({
       <div className="text-slate-500">Everything at your fingertips.</div>
     </div>
     <div className="pb-4 border-b border-slate-800">
-      <Button
-        className={`gap-2 mx-auto flex rounded-full w-full transition duration-150 ease-in-out group ${
-          plan === "pro"
+      <a
+        className={`btn-sm w-full transition duration-150 ease-in-out group ${
+          plan === "starter"
             ? "text-white bg-indigo-500 hover:bg-indigo-600"
             : "text-slate-900 bg-gradient-to-r from-white/80 via-white to-white/80 hover:bg-white"
         }`}
+        href="#0"
       >
         Get Started{" "}
-        <MoveRight
+        <span
           className={`tracking-normal ${
-            plan === "pro" ? "text-indigo-300" : "text-indigo-500"
+            plan === "starter" ? "text-indigo-300" : "text-indigo-500"
           } group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1`}
         >
           -&gt;
-        </MoveRight>
-      </Button>
+        </span>
+      </a>
     </div>
   </div>
 );
@@ -185,29 +152,23 @@ const FeatureRow = ({ feature }: { feature: PlanFeature }) => (
     </div>
     {["starter", "pro", "enterprise"].map((plan) => (
       <div key={plan} className="px-6 flex flex-col justify-end">
-        <div
-          className={`flex items-center h-full border-b border-slate-800 py-2 text-slate-400 ${
-            !feature[plan as keyof PlanFeature] ? "hidden md:flex" : ""
-          }`}
-        >
+        <div className="flex items-center h-full border-b border-slate-800 py-2 text-slate-400">
           {feature[plan as keyof PlanFeature] && (
-            <>
-              <svg
-                className="shrink-0 fill-indigo-500 mr-3"
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="9"
-              >
-                <path d="M10.28.28 3.989 6.575 1.695 4.28A1 1 0 0 0 .28 5.695l3 3a1 1 0 0 0 1.414 0l7-7A1 1 0 0 0 10.28.28Z" />
-              </svg>
-              <span>
-                {typeof feature[plan as keyof PlanFeature] === "string"
-                  ? feature[plan as keyof PlanFeature]
-                  : ""}
-                <span className="md:hidden"> {feature.name}</span>
-              </span>
-            </>
+            <svg
+              className="shrink-0 fill-indigo-500 mr-3"
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="9"
+            >
+              <path d="M10.28.28 3.989 6.575 1.695 4.28A1 1 0 0 0 .28 5.695l3 3a1 1 0 0 0 1.414 0l7-7A1 1 0 0 0 10.28.28Z" />
+            </svg>
           )}
+          <span>
+            {typeof feature[plan as keyof PlanFeature] === "string"
+              ? feature[plan as keyof PlanFeature]
+              : ""}
+            <span className="md:hidden">{feature.name}</span>
+          </span>
         </div>
       </div>
     ))}
@@ -255,18 +216,13 @@ export default function Pricing() {
             <div className="absolute inset-0 translate-z-0 bg-indigo-500 rounded-full blur-[120px] opacity-50" />
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="py-12 md:py-20">
             {/* Content */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
               <div>
-                <div className="inline-flex font-medium pb-3 ">
-                  <Badge
-                    variant="default"
-                    className="rounded-full bg-indigo-500"
-                  >
-                    <AnimatedShinyText>Pricing plans</AnimatedShinyText>
-                  </Badge>
+                <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
+                  Pricing plans
                 </div>
               </div>
               <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
@@ -314,7 +270,7 @@ export default function Pricing() {
               <div className="grid md:grid-cols-4 xl:-mx-6 text-sm [&>div:nth-of-type(-n+4)]:py-6 [&>div:nth-last-of-type(-n+4)]:pb-6 max-md:[&>div:nth-last-of-type(-n+4)]:mb-8 max-md:[&>div:nth-of-type(-n+4):nth-of-type(n+1)]:rounded-t-3xl max-md:[&>div:nth-last-of-type(-n+4)]:rounded-b-3xl md:[&>div:nth-of-type(2)]:rounded-tl-3xl md:[&>div:nth-of-type(4)]:rounded-tr-3xl md:[&>div:nth-last-of-type(3)]:rounded-bl-3xl md:[&>div:nth-last-of-type(1)]:rounded-br-3xl [&>div]:bg-slate-700/20 [&>div:nth-of-type(4n+1)]:bg-transparent max-md:[&>div:nth-of-type(4n+5)]:hidden max-md:[&>div:nth-of-type(4n+2)]:order-1 max-md:[&>div:nth-of-type(4n+3)]:order-2 max-md:[&>div:nth-of-type(4n+4)]:order-3 max-md:md:[&>div:nth-of-type(n)]:mb-0 [&>div:nth-of-type(4n+3)]:relative before:[&>div:nth-of-type(4n+3)]:absolute before:[&>div:nth-of-type(4n+3)]:-inset-px before:[&>div:nth-of-type(4n+3)]:rounded-[inherit] before:[&>div:nth-of-type(4n+3)]:border-x-2 before:[&>div:nth-of-type(3)]:border-t-2 before:[&>div:nth-last-of-type(2)]:border-b-2 before:[&>div:nth-of-type(4n+3)]:border-indigo-500 before:[&>div:nth-of-type(4n+3)]:-z-10 before:[&>div:nth-of-type(4n+3)]:pointer-events-none">
                 {/* Pricing toggle */}
                 <div className="px-6 flex flex-col justify-end">
-                  <div className="pb-4 md:border-b border-slate-800">
+                  <div className="pb-5 md:border-b border-slate-800">
                     {/* Toggle switch */}
                     <div className="max-md:text-center">
                       <div className="inline-flex items-center whitespace-nowrap">
@@ -333,12 +289,11 @@ export default function Pricing() {
                             htmlFor="toggle"
                             className="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-400 px-0.5 outline-slate-400 transition-colors before:h-5 before:w-5 before:rounded-full before:bg-white before:shadow-sm before:transition-transform before:duration-150 peer-checked:bg-indigo-500 peer-checked:before:translate-x-full peer-focus-visible:outline peer-focus-visible:outline-offset-2 peer-focus-visible:outline-gray-400 peer-checked:peer-focus-visible:outline-indigo-500"
                           >
-                            <span className="sr-only">Pay Quarterly</span>
+                            <span className="sr-only">Pay Yearly</span>
                           </label>
                         </div>
                         <div className="text-sm text-slate-500 font-medium ml-2">
-                          Quarterly{" "}
-                          <span className="text-teal-500">(-20%)</span>
+                          Yearly <span className="text-teal-500">(-20%)</span>
                         </div>
                       </div>
                     </div>

@@ -1,131 +1,177 @@
-import Logo from './logo'
+import Logo from "./logo";
+
+import { SVGProps } from "react";
+
+const icons: {
+  [key: string]: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+} = {
+  twitter: (props) => (
+    <svg
+      className="size-4 fill-current"
+      viewBox="0 0 1200 1227"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z" />
+    </svg>
+  ),
+  linkedin: (props) => (
+    <svg
+      className="size-4 fill-current"
+      viewBox="0 0 256 256"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" />
+    </svg>
+  ),
+  github: (props) => (
+    <svg
+      className="size-4 fill-current"
+      viewBox="0 0 256 256"
+      fill="#fff"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid"
+    >
+      <path d="M128.001 0C57.317 0 0 57.307 0 128.001c0 56.554 36.676 104.535 87.535 121.46 6.397 1.185 8.746-2.777 8.746-6.158 0-3.052-.12-13.135-.174-23.83-35.61 7.742-43.124-15.103-43.124-15.103-5.823-14.795-14.213-18.73-14.213-18.73-11.613-7.944.876-7.78.876-7.78 12.853.902 19.621 13.19 19.621 13.19 11.417 19.568 29.945 13.911 37.249 10.64 1.149-8.272 4.466-13.92 8.127-17.116-28.431-3.236-58.318-14.212-58.318-63.258 0-13.975 5-25.394 13.188-34.358-1.329-3.224-5.71-16.242 1.24-33.874 0 0 10.749-3.44 35.21 13.121 10.21-2.836 21.16-4.258 32.038-4.307 10.878.049 21.837 1.47 32.066 4.307 24.431-16.56 35.165-13.12 35.165-13.12 6.967 17.63 2.584 30.65 1.255 33.873 8.207 8.964 13.173 20.383 13.173 34.358 0 49.163-29.944 59.988-58.447 63.157 4.591 3.972 8.682 11.762 8.682 23.704 0 17.126-.148 30.91-.148 35.126 0 3.407 2.304 7.398 8.792 6.14C219.37 232.5 256 184.537 256 128.002 256 57.307 198.691 0 128.001 0Zm-80.06 182.34c-.282.636-1.283.827-2.194.39-.929-.417-1.45-1.284-1.15-1.922.276-.655 1.279-.838 2.205-.399.93.418 1.46 1.293 1.139 1.931Zm6.296 5.618c-.61.566-1.804.303-2.614-.591-.837-.892-.994-2.086-.375-2.66.63-.566 1.787-.301 2.626.591.838.903 1 2.088.363 2.66Zm4.32 7.188c-.785.545-2.067.034-2.86-1.104-.784-1.138-.784-2.503.017-3.05.795-.547 2.058-.055 2.861 1.075.782 1.157.782 2.522-.019 3.08Zm7.304 8.325c-.701.774-2.196.566-3.29-.49-1.119-1.032-1.43-2.496-.726-3.27.71-.776 2.213-.558 3.315.49 1.11 1.03 1.45 2.505.701 3.27Zm9.442 2.81c-.31 1.003-1.75 1.459-3.199 1.033-1.448-.439-2.395-1.613-2.103-2.626.301-1.01 1.747-1.484 3.207-1.028 1.446.436 2.396 1.602 2.095 2.622Zm10.744 1.193c.036 1.055-1.193 1.93-2.715 1.95-1.53.034-2.769-.82-2.786-1.86 0-1.065 1.202-1.932 2.733-1.958 1.522-.03 2.768.818 2.768 1.868Zm10.555-.405c.182 1.03-.875 2.088-2.387 2.37-1.485.271-2.861-.365-3.05-1.386-.184-1.056.893-2.114 2.376-2.387 1.514-.263 2.868.356 3.061 1.403Z" />
+    </svg>
+  ),
+};
+
+const socialLinks = [
+  { href: "#0", ariaLabel: "Twitter", icon: "twitter" },
+  {
+    href: "https://www.linkedin.com/company/tinybotshq/",
+    ariaLabel: "LinkedIn",
+    icon: "linkedin",
+  },
+  { href: "#0", ariaLabel: "Github", icon: "github" },
+];
+
+const footerColumns = [
+  {
+    title: "Products",
+    links: [
+      { href: "#0", text: "Features" },
+      { href: "#0", text: "Integrations" },
+      { href: "#0", text: "Pricing & Plans" },
+      { href: "#0", text: "Changelog" },
+      { href: "#0", text: "Our method" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "#0", text: "About us" },
+      { href: "#0", text: "Diversity & Inclusion" },
+      { href: "#0", text: "Blog" },
+      { href: "#0", text: "Careers" },
+      { href: "#0", text: "Financial statements" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { href: "#0", text: "Community" },
+      { href: "#0", text: "Terms of service" },
+      { href: "#0", text: "Report a vulnerability" },
+    ],
+  },
+  {
+    title: "Legals",
+    links: [
+      { href: "#0", text: "Refund policy" },
+      { href: "#0", text: "Terms & Conditions" },
+      { href: "#0", text: "Privacy policy" },
+      { href: "#0", text: "Brand Kit" },
+    ],
+  },
+];
+
+interface FooterColumnProps {
+  title: string;
+  links: Array<{ href: string; text: string }>;
+  className?: string;
+}
+
+function FooterColumn({ title, links, className }: FooterColumnProps) {
+  return (
+    <div className={className}>
+      <h6 className="text-sm text-slate-50 font-medium mb-2">{title}</h6>
+      <ul className="text-sm space-y-2">
+        {links.map((link) => (
+          <li key={link.text}>
+            <a
+              className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out"
+              href={link.href}
+            >
+              {link.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+interface SocialLinkProps {
+  href: string;
+  ariaLabel: string;
+  icon: string;
+}
+
+function SocialLink({ href, ariaLabel, icon }: SocialLinkProps) {
+  const Icon = icons[icon];
+  return (
+    <a
+      className="flex justify-center items-center text-indigo-500 hover:text-indigo-400 transition duration-150 ease-in-out"
+      href={href}
+      aria-label={ariaLabel}
+    >
+      <Icon />
+    </a>
+  );
+}
 
 export default function Footer() {
   return (
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-
-        { /* Blocks */}
         <div className="grid sm:grid-cols-12 gap-8 py-8 md:py-12">
-
-          { /* 1st block */}
+          {/* 1st block */}
           <div className="sm:col-span-12 lg:col-span-4 order-1 lg:order-none">
             <div className="h-full flex flex-col sm:flex-row lg:flex-col justify-between">
               <div className="mb-4 sm:mb-0">
                 <div className="mb-4">
                   <Logo />
                 </div>
-                <div className="text-sm text-slate-300">© Cruip.com <span className="text-slate-500">-</span> All rights reserved.</div>
+                <div className="text-sm text-slate-300">
+                  © TinyBots.chat <span className="text-slate-500">-</span> All
+                  rights reserved.
+                </div>
               </div>
-              { /* Social links */}
+              {/* Social links */}
               <ul className="flex">
-                <li>
-                  <a className="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
-                    <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M24 11.5c-.6.3-1.2.4-1.9.5.7-.4 1.2-1 1.4-1.8-.6.4-1.3.6-2.1.8-.6-.6-1.5-1-2.4-1-1.7 0-3.2 1.5-3.2 3.3 0 .3 0 .5.1.7-2.7-.1-5.2-1.4-6.8-3.4-.3.5-.4 1-.4 1.7 0 1.1.6 2.1 1.5 2.7-.5 0-1-.2-1.5-.4 0 1.6 1.1 2.9 2.6 3.2-.3.1-.6.1-.9.1-.2 0-.4 0-.6-.1.4 1.3 1.6 2.3 3.1 2.3-1.1.9-2.5 1.4-4.1 1.4H8c1.5.9 3.2 1.5 5 1.5 6 0 9.3-5 9.3-9.3v-.4c.7-.5 1.3-1.1 1.7-1.8z" />
-                    </svg>
-                  </a>
-                </li>
-                <li className="ml-2">
-                  <a className="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Dev.to">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-                      <path className="w-8 h-8 fill-current" d="M12.29 14.3a.69.69 0 0 0-.416-.155h-.623v3.727h.623a.689.689 0 0 0 .416-.156.543.543 0 0 0 .21-.466v-2.488a.547.547 0 0 0-.21-.462ZM22.432 8H9.568C8.704 8 8.002 8.7 8 9.564v12.872A1.568 1.568 0 0 0 9.568 24h12.864c.864 0 1.566-.7 1.568-1.564V9.564A1.568 1.568 0 0 0 22.432 8Zm-8.925 9.257a1.631 1.631 0 0 1-1.727 1.687h-1.657v-5.909h1.692a1.631 1.631 0 0 1 1.692 1.689v2.533ZM17.1 14.09h-1.9v1.372h1.163v1.057H15.2v1.371h1.9v1.056h-2.217a.72.72 0 0 1-.74-.7v-4.471a.721.721 0 0 1 .7-.739H17.1v1.054Zm3.7 4.118c-.471 1.1-1.316.88-1.694 0l-1.372-5.172H18.9l1.058 4.064 1.056-4.062h1.164l-1.378 5.17Z" />
-                    </svg>
-                  </a>
-                </li>
-                <li className="ml-2">
-                  <a className="flex justify-center items-center text-purple-500 hover:text-purple-400 transition duration-150 ease-in-out" href="#0" aria-label="Github">
-                    <svg className="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
-                    </svg>
-                  </a>
-                </li>
+                {socialLinks.map((link, index) => (
+                  <li key={link.ariaLabel} className={index > 0 ? "ml-2" : ""}>
+                    <SocialLink {...link} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          { /* 2nd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-sm text-slate-50 font-medium mb-2">Products</h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Features</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Integrations</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Pricing & Plans</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Changelog</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Our method</a>
-              </li>
-            </ul>
-          </div>
-
-          { /* 3rd block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-sm text-slate-50 font-medium mb-2">Company</h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">About us</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Diversity & Inclusion</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Blog</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Careers</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Financial statements</a>
-              </li>
-            </ul>
-          </div>
-
-          { /* 4th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-sm text-slate-50 font-medium mb-2">Resources</h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Community</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Terms of service</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Report a vulnerability</a>
-              </li>
-            </ul>
-          </div>
-
-          { /* 5th block */}
-          <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h6 className="text-sm text-slate-50 font-medium mb-2">Legals</h6>
-            <ul className="text-sm space-y-2">
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Refund policy</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Terms & Conditions</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Privacy policy</a>
-              </li>
-              <li>
-                <a className="text-slate-400 hover:text-slate-200 transition duration-150 ease-in-out" href="#0">Brand Kit</a>
-              </li>
-            </ul>
-          </div>
-
+          {/* Footer columns */}
+          {footerColumns.map((column, index) => (
+            <FooterColumn
+              key={column.title}
+              title={column.title}
+              links={column.links}
+              className="sm:col-span-6 md:col-span-3 lg:col-span-2"
+            />
+          ))}
         </div>
-
       </div>
     </footer>
-  )
+  );
 }
