@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Particles from "./particles";
 import Illustration from "@/public/images/glow-bottom.svg";
-import { CircleDot } from "lucide-react";
+import { ArrowRight, CircleDot, MoveRight } from "lucide-react";
 import { getI18n } from "@/locale/server";
 
 export default async function Hero() {
@@ -69,9 +69,9 @@ export default async function Hero() {
                   href="#0"
                 >
                   {t("home.hero.callToAction1")}
-                  <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                  <ArrowRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                     -&gt;
-                  </span>
+                  </ArrowRight>
                 </a>
               </div>
               <div>

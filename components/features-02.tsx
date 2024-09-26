@@ -20,7 +20,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
   description,
 }) => {
   return (
-    <div className="bg-slate-800/25 p-4 rounded-3xl hover:bg-slate-800/50 transition-all duration-300 cursor-default">
+    <div className="bg-slate-700/25 p-4 rounded-3xl hover:bg-slate-700/50 transition-all duration-300 cursor-default">
       <div className="flex flex-row items-center gap-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -32,11 +32,11 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="lucide lucide-check text-indigo-500"
+          className="lucide lucide-check text-indigo-500 shrink-0"
         >
           <path d="M20 6 9 17l-5-5"></path>
         </svg>
-        <div className="flex flex-col items-start mb-1">
+        <div className="flex flex-col items-start">
           <h4 className="font-medium text-slate-50">{title}</h4>
           <p className="text-sm text-slate-400">{description}</p>
         </div>
@@ -94,6 +94,13 @@ export default async function Features02() {
   ];
   return (
     <section className="relative">
+      <div
+        className="absolute flex items-center justify-center top-24 -translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/3 aspect-square"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0 translate-z-0 bg-indigo-500 rounded-full blur-[120px] opacity-70" />
+        <div className="absolute w-1/4 h-1/4 translate-z-0 bg-indigo-500 rounded-full blur-[40px]" />
+      </div>
       {/* Particles animation */}
       <div className="absolute left-1/2 -translate-x-1/2 top-0 -z-10 w-80 h-80 -mt-24 -ml-32">
         <Particles
@@ -104,9 +111,14 @@ export default async function Features02() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-16 md:pt-32">
+        <div className="py-16 md:py-32">
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+          <div className="max-w-xl mx-auto text-center pb-12 md:pb-20">
+            {/* <div>
+              <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
+                {t("home.features02.badgeText")}
+              </div>
+            </div> */}
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
               {t("home.features02.title")}
             </h2>

@@ -18,79 +18,68 @@ export default {
       slots_left: "There is 1 slot left in September",
       title: "Turn Your Ideas Into an MVP in Weeks, Not Months",
       subtitle:
-        "Launch your MVP in just a few weeks—efficient, quick, and cost-effective. We handle everything.",
+        "Launch your MVP in just a few weeks—efficiently, quickly, and cost-effectively. We handle everything.",
       callToAction1: "Get started",
       callToAction2: "Book a call",
     },
     features: {
-      badgeText: "Why Trust Us?",
-      title: "Why Trust Us?",
-      description: "We offer a range of services to meet your needs.",
+      badgeText: "Why Choose Us?",
+      title: "Why Choose Us?",
+      description:
+        "We specialize in rapid MVP development to validate your ideas.",
       feature1: {
-        title: "Fast & Efficient",
-        subtitle: "We deliver results quickly and efficiently.",
+        title: "Rapid Prototyping",
+        subtitle: "We deliver functional prototypes quickly.",
         description:
-          "Our team works tirelessly to ensure your project is completed on time.",
+          "Our team works tirelessly to ensure your MVP is completed on time.",
       },
       feature2: {
-        title: "Scalable Technologies",
-        subtitle: "We use cutting-edge, scalable technologies.",
-        description: "Our solutions are built to grow with your business.",
+        title: "Lean Technologies",
+        subtitle: "We use efficient, scalable technologies.",
+        description:
+          "Our solutions are built to validate your idea and grow with your business.",
       },
       feature3: {
-        title: "Support",
-        subtitle: "We provide ongoing support.",
+        title: "Iterative Support",
+        subtitle: "We provide ongoing support and iterations.",
         description:
-          "Our team is always available to help you with any issues.",
+          "Our team is always available to help you refine your MVP based on user feedback.",
       },
     },
     features02: {
-      title: "Faster. Smarter.",
+      badgeText: "Why Trust Us?",
+      title: "Launch In 2 Weeks: $2,995/MVP",
       subtitle:
-        "There are many variations available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+        "We offer focused services to help you build and launch your MVP quickly and efficiently.",
       feature1: {
-        title: "Fast & Efficient",
-        subtitle: "We deliver results quickly and efficiently.",
+        title: "Custom Web App",
         description:
-          "Our team works tirelessly to ensure your project is completed on time.",
+          "Develop a web application tailored to your unique business requirements. We'll create a beautiful, functional and responsive web app.",
       },
       feature2: {
-        title: "Scalable Technologies",
-        subtitle: "We use cutting-edge, scalable technologies.",
-        description: "Our solutions are built to grow with your business.",
+        title: "Landing Page Creation",
+        description:
+          "Get a high-converting, functional and responsive marketing landing page. Blog, contact form, newsletter, etc.",
       },
       feature3: {
-        title: "Support",
-        subtitle: "We provide ongoing support.",
+        title: "UX & Product Design",
         description:
-          "Our team is always available to help you with any issues.",
+          "We'll create user-friendly interfaces with a beautiful component library. From scratch or based on your initial design.",
       },
       feature4: {
-        title: "Security",
-        subtitle: "We ensure the security of your data.",
-        description: "Our team ensures that your data is secure and protected.",
+        title: "Essential Integrations",
+        description:
+          "Implement integrations for APIs, databases, and authentication. We'll ensure your MVP is fully integrated and functional.",
       },
       feature5: {
-        title: "Scalability",
-        subtitle: "We ensure the scalability of your data.",
+        title: "Funnel & Analytics",
         description:
-          "Our team ensures that your data is scalable and protected.",
+          "Whether you need help with product analytics or a funnel, we'll help you with that. We'll also provide ongoing support.",
       },
       feature6: {
-        title: "Performance",
-        subtitle: "We ensure the performance of your data.",
+        title: "Performance Optimization",
         description:
-          "Our team ensures that your data is performant and protected.",
-      },
-      feature7: {
-        title: "Security",
-        subtitle: "We ensure the security of your data.",
-        description: "Our team ensures that your data is secure and protected.",
-      },
-      feature8: {
-        title: "Security",
-        subtitle: "We ensure the security of your data.",
-        description: "Our team ensures that your data is secure and protected.",
+          "We'll optimize your MVP for performance and scalability. We'll also help you with performance monitoring and troubleshooting.",
       },
     },
     features03: {
@@ -142,23 +131,28 @@ export default {
       },
     },
     testimonialsCarousel: {
-      securityFirstPlatform: "Security-First Platform",
-      buildYourMVP: "Build Your MVP in Weeks, Not Months",
+      badgeText: "What We Do",
+      buildYourMVP: "Our Specialties",
       description:
-        "We offer a range of services to help you build your MVP quickly and efficiently.",
-      customWebApps: "Custom Web Apps",
-      everythingYouNeed: "Everything you need to build your web application.",
-      botDetection: "Bot Detection",
-      incorporateRichUserProfiling:
-        "Incorporate rich user profiling and facilitate more transactions.",
-      socialIntegrations: "Social Integrations",
-      learnMore: "Learn More",
+        "We offer focused services to help you build and launch your MVP quickly and efficiently.",
+      specialty1: "AI App Development",
+      specialty1Description:
+        "Want to build an AI wrapper? Have an idea for an AI app? We develop lean, functional AI applications to validate your ideas.",
+      buildSpecialty1: "Build an AI App",
+      specialty2: "SaaS Product Development",
+      specialty2Description:
+        "If you have an idea, B2B or B2C, we can help you develop it into a full-fledged SaaS product.",
+      buildSpecialty2: "Build a SaaS Web App",
+      specialty3: "Mobile & Web App Development",
+      specialty3Description:
+        "We develop mobile & web apps to bring your product ideas to life.",
+      buildSpecialty3: "Build a Mobile or Web App",
     },
     experience: {
       badgeText: "Our",
-      appTitle: "Creation of Web & Mobile applications",
+      appTitle: "Rapid MVP Development",
       appDescription:
-        "We develop high-performance, scalable and secure web and mobile applications. We use the latest technologies on the market and integrate AI into our solutions where necessary.",
+        "We specialize in creating lean, functional MVPs for web and mobile applications. Our focus is on speed and efficiency, helping you validate your ideas quickly in the market.",
       ctaText: "Get started",
     },
     work: {
@@ -218,54 +212,14 @@ export default {
       title: "The tools we use on our day-to-day",
     },
   },
-  projects: {
-    metaTitle: "Our projects | Otopio",
-    title: "Our projects",
-    subtitle:
-      "Dive into my diverse range of projects, showcasing my expertise in software development, design, and dedication to delivering exceptional results.",
-    view: "View Work",
-    clickmtl:
-      "Click MTL is a photography and video agency based in Montreal. We created a website that reflects their visual identity.",
-    immovia:
-      "Immovia, is a platform that helps new buyers find their dream home. We are responsible for the design and development of the platform.",
-    sockdatingsim:
-      "Sock Dating Sim is a dating simulation game. We created a landing page to showcase the game and attract new players.",
-    alteretgo:
-      "Alter&Go is a company that offers recruitment services. We designed a landing page to showcase their services and attract new clients.",
-    topscaleai:
-      "TopScale is an AI-powered tool that streamlines social media management. We designed a landing page highlighting its key features, inviting users to join the waitlist.",
-    megascale:
-      "Megascale is a platform that allows you to find and contact leads. We created the platform from scratch, from the design to the code.",
-    emergence:
-      "Emergence Entreprise is a consulting firm that helps companies grow. We designed a landing page to showcase their services and attract new clients.",
-    lightdph:
-      "Light DPH is a web application that allows you to upload documents on the blockchain. You can also consult the documents uploaded by other users.",
-    aled: "ALED is a platform for students. It allows the users to exchange documents and ask questions in a forum. It also gives the possibility to consult one's timetable, one's grades and to discuss with other students.",
-    cabinetlatif:
-      "Cabinet Latif is a accounting firm. We designed a landing page to showcase their services and attract new clients.",
-    reacttutorials:
-      "This is a website that we created to help people learn React. It contains tutorials and examples.",
-    leapyearlearning:
-      "We designed a landing page for Leap Year Learning, a company that offers online courses on AI.",
-    senzuprinter:
-      "Senzu Printer is a web application that allows printing of shipping labels for connected products. It is created using Electron and React, and is designed for use by printing partners of the company.",
-    obeobiogas:
-      "Obeo Biogas is a company that offers biogas solutions. We designed a landing page to showcase their services and attract new clients.",
-    voolta:
-      "Voolta is a private chauffeur agency in Lyon. We created their booking platform, which allows you to book and pay for trips directly online.",
-    boxingclub:
-      "Boxing Club is a sports club that offers boxing classes. We created a website that allows you to book classes and pay online.",
-    fireterminator:
-      "Fire Terminator is a company that offers a plant-based solution that suppresses all types of fires in seconds. We designed their e-commerce website.",
-  },
   pricing: {
-    badgeText: "Pricing plans",
-    title: "All-inclusive pricing",
+    badgeText: "MVP Packages",
+    title: "Transparent MVP Pricing",
     description:
-      "Many desktop publishing packages and web page editors now use lorem ipsum as their default model text, and a search will uncover many web sites still in their infancy.",
-    sectionTitle1: "Core Services",
-    sectionTitle2: "Additional Features",
-    sectionTitle3: "Support",
+      "Choose the MVP package that fits your needs. Our pricing is designed to get your idea to market quickly and cost-effectively.",
+    sectionTitle1: "Core MVP Features",
+    sectionTitle2: "Additional MVP Services",
+    sectionTitle3: "MVP Support",
     plans: {
       starter: {
         name: "Starter",
@@ -308,6 +262,31 @@ export default {
       "feature9.starter": "Basic",
       "feature9.pro": "Advanced",
       "feature9.enterprise": "Complex",
+      feature10: "Essential Integrations",
+      "feature10.starter": "Basic",
+      "feature10.pro": "Advanced",
+      "feature10.enterprise": "Complex",
+      feature11: "Setup and Onboarding Sessions",
+      "feature11.starter": "Basic",
+      "feature11.pro": "Advanced",
+      "feature11.enterprise": "Complex",
+      feature12: "Performance Optimization",
+      "feature12.starter": "Basic",
+      "feature12.pro": "Advanced",
+      "feature12.enterprise": "Complex",
+      feature13: "Responsive UI/UX Design",
+      "feature13.starter": "Basic",
+      "feature13.pro": "Advanced",
+      "feature13.enterprise": "Complex",
+      feature14: "Source Code Access",
+      "feature14.starter": "Basic",
+      "feature14.pro": "Advanced",
+      "feature14.enterprise": "Complex",
+      feature15: "Custom Branding",
+      "feature15.starter": "Basic",
+      "feature15.pro": "Advanced",
+      "feature15.enterprise": "Complex",
+      feature16: "Blog",
     },
     sectionTitles: {
       feature1: "Custom Web App Development",

@@ -34,7 +34,7 @@ export default async function RootLayout({
   const { locale } = await params;
 
   return (
-    <html lang={locale || "en"}>
+    <html lang={locale || "fr"}>
       <body
         className={`${GeistSans.variable} font-inter antialiased bg-slate-900 text-slate-100 tracking-tight`}
       >

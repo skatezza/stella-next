@@ -24,7 +24,7 @@ type PricingData = {
     starter: { name: string; price: { monthly: number; annual: number } };
     enterprise: { name: string; price: { monthly: number; annual: number } };
   };
-  features: PlanFeature[];
+  features?: PlanFeature[];
 };
 
 // New type for section titles
@@ -40,89 +40,6 @@ const pricingData: PricingData = {
     pro: { name: "Pro", price: { monthly: 4999, annual: 4499 } },
     enterprise: { name: "Enterprise", price: { monthly: 7999, annual: 6999 } },
   },
-  features: [
-    {
-      name: "Custom Web App Development",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Complex",
-    },
-    {
-      name: "Landing Page Creation",
-      starter: "1 page",
-      pro: "Up to 3 pages",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "UI/UX Design",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Premium",
-    },
-    {
-      name: "User Authentication",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Database Setup",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Email Systems (Newsletter, Contact Form)",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Essential Integrations",
-      starter: "2",
-      pro: "5",
-      enterprise: "Unlimited",
-    },
-    {
-      name: "Setup and Onboarding Sessions",
-      starter: "2 hours",
-      pro: "5 hours",
-      enterprise: "10 hours",
-    },
-    {
-      name: "Performance Optimization",
-      starter: "Basic",
-      pro: "Advanced",
-      enterprise: "Premium",
-    },
-    {
-      name: "Responsive UI/UX Design",
-      starter: "Desktop & Mobile",
-      pro: "Desktop & Mobile",
-      enterprise: "Desktop & Mobile",
-    },
-    {
-      name: "Source Code Access",
-      starter: "Fully accessible",
-      pro: "Fully accessible",
-      enterprise: "Fully accessible",
-    },
-    { name: "Custom Branding", starter: false, pro: true, enterprise: true },
-    { name: "Blog", starter: false, pro: true, enterprise: true },
-    { name: "Priority Support", starter: false, pro: true, enterprise: true },
-    {
-      name: "Dedicated Project Manager",
-      starter: false,
-      pro: false,
-      enterprise: true,
-    },
-    {
-      name: "Scalability Planning",
-      starter: false,
-      pro: false,
-      enterprise: true,
-    },
-  ],
 };
 
 // Reusable components
@@ -181,10 +98,10 @@ const FeatureRow = ({ feature }: { feature: PlanFeature }) => (
       <div key={plan} className="px-6 flex flex-col justify-end">
         <div
           className={`flex items-center h-full border-b border-slate-800 py-2 text-slate-400 ${
-            !feature[plan as keyof PlanFeature] ? "hidden md:flex" : ""
+            feature[plan as keyof PlanFeature] === false ? "hidden md:flex" : ""
           }`}
         >
-          {feature[plan as keyof PlanFeature] && (
+          {feature[plan as keyof PlanFeature] !== " " && (
             <>
               <svg
                 className="shrink-0 fill-indigo-500 mr-3"
@@ -195,9 +112,13 @@ const FeatureRow = ({ feature }: { feature: PlanFeature }) => (
                 <path d="M10.28.28 3.989 6.575 1.695 4.28A1 1 0 0 0 .28 5.695l3 3a1 1 0 0 0 1.414 0l7-7A1 1 0 0 0 10.28.28Z" />
               </svg>
               <span>
-                {typeof feature[plan as keyof PlanFeature] === "string"
-                  ? feature[plan as keyof PlanFeature]
-                  : ""}
+                {typeof feature[plan as keyof PlanFeature] === "string" ? (
+                  <span className="hidden md:block">
+                    {feature[plan as keyof PlanFeature]}
+                  </span>
+                ) : (
+                  ""
+                )}
                 <span className="md:hidden"> {feature.name}</span>
               </span>
             </>
@@ -276,66 +197,75 @@ export default function Pricing() {
       },
       {
         name: t("pricing.features.feature4"),
-        starter: "Basic",
-        pro: "Advanced",
-        enterprise: "Unlimited",
+        starter: t("pricing.features.feature4.starter"),
+        pro: t("pricing.features.feature4.pro"),
+        enterprise: t("pricing.features.feature4.enterprise"),
       },
       {
-        name: "Database Setup",
-        starter: "Basic",
-        pro: "Advanced",
-        enterprise: "Unlimited",
+        name: t("pricing.features.feature5"),
+        starter: t("pricing.features.feature5.starter"),
+        pro: t("pricing.features.feature5.pro"),
+        enterprise: t("pricing.features.feature5.enterprise"),
       },
       {
-        name: "Email Systems (Newsletter, Contact Form)",
-        starter: "Basic",
-        pro: "Advanced",
-        enterprise: "Unlimited",
+        name: t("pricing.features.feature6"),
+        starter: t("pricing.features.feature6.starter"),
+        pro: t("pricing.features.feature6.pro"),
+        enterprise: t("pricing.features.feature6.enterprise"),
       },
       {
-        name: "Essential Integrations",
-        starter: "2",
-        pro: "5",
-        enterprise: "Unlimited",
+        name: t("pricing.features.feature7"),
+        starter: t("pricing.features.feature7.starter"),
+        pro: t("pricing.features.feature7.pro"),
+        enterprise: t("pricing.features.feature7.enterprise"),
       },
       {
-        name: "Setup and Onboarding Sessions",
-        starter: "2 hours",
-        pro: "5 hours",
-        enterprise: "10 hours",
+        name: t("pricing.features.feature8"),
+        starter: t("pricing.features.feature8.starter"),
+        pro: t("pricing.features.feature8.pro"),
+        enterprise: t("pricing.features.feature8.enterprise"),
       },
       {
-        name: "Performance Optimization",
-        starter: "Basic",
-        pro: "Advanced",
-        enterprise: "Premium",
+        name: t("pricing.features.feature9"),
+        starter: t("pricing.features.feature9.starter"),
+        pro: t("pricing.features.feature9.pro"),
+        enterprise: t("pricing.features.feature9.enterprise"),
       },
       {
-        name: "Responsive UI/UX Design",
-        starter: "Desktop & Mobile",
-        pro: "Desktop & Mobile",
-        enterprise: "Desktop & Mobile",
+        name: t("pricing.features.feature10"),
+        starter: t("pricing.features.feature10.starter"),
+        pro: t("pricing.features.feature10.pro"),
+        enterprise: t("pricing.features.feature10.enterprise"),
       },
       {
-        name: "Source Code Access",
-        starter: "Fully accessible",
-        pro: "Fully accessible",
-        enterprise: "Fully accessible",
-      },
-      { name: "Custom Branding", starter: false, pro: true, enterprise: true },
-      { name: "Blog", starter: false, pro: true, enterprise: true },
-      { name: "Priority Support", starter: false, pro: true, enterprise: true },
-      {
-        name: "Dedicated Project Manager",
-        starter: false,
-        pro: false,
-        enterprise: true,
+        name: t("pricing.features.feature11"),
+        starter: t("pricing.features.feature11.starter"),
+        pro: t("pricing.features.feature11.pro"),
+        enterprise: t("pricing.features.feature11.enterprise"),
       },
       {
-        name: "Scalability Planning",
-        starter: false,
-        pro: false,
-        enterprise: true,
+        name: t("pricing.features.feature12"),
+        starter: t("pricing.features.feature12.starter"),
+        pro: t("pricing.features.feature12.pro"),
+        enterprise: t("pricing.features.feature12.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature13"),
+        starter: t("pricing.features.feature13.starter"),
+        pro: t("pricing.features.feature13.pro"),
+        enterprise: t("pricing.features.feature13.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature14"),
+        starter: t("pricing.features.feature14.starter"),
+        pro: t("pricing.features.feature14.pro"),
+        enterprise: t("pricing.features.feature14.enterprise"),
+      },
+      {
+        name: t("pricing.features.feature15"),
+        starter: t("pricing.features.feature15.starter"),
+        pro: t("pricing.features.feature15.pro"),
+        enterprise: t("pricing.features.feature15.enterprise"),
       },
     ],
   };
@@ -445,22 +375,23 @@ export default function Pricing() {
                 <PlanHeader plan="enterprise" annual={annual} />
 
                 {/* Features with section titles */}
-                {pricingData.features.map((feature, index) => (
-                  <React.Fragment key={index}>
-                    {sectionTitles.find(
-                      (section) => section.startIndex === index
-                    ) && (
-                      <SectionTitle
-                        title={
-                          sectionTitles.find(
-                            (section) => section.startIndex === index
-                          )!.name
-                        }
-                      />
-                    )}
-                    <FeatureRow feature={feature} />
-                  </React.Fragment>
-                ))}
+                {pricingData.features &&
+                  pricingData.features.map((feature, index) => (
+                    <React.Fragment key={index}>
+                      {sectionTitles.find(
+                        (section) => section.startIndex === index
+                      ) && (
+                        <SectionTitle
+                          title={
+                            sectionTitles.find(
+                              (section) => section.startIndex === index
+                            )!.name
+                          }
+                        />
+                      )}
+                      <FeatureRow feature={feature} />
+                    </React.Fragment>
+                  ))}
               </div>
             </div>
           </div>

@@ -1,22 +1,20 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Image, { StaticImageData } from "next/image";
-import { Transition } from "@headlessui/react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import Particles from "./particles";
 import { useI18n } from "@/locale/client";
 
-import CarouselImg01 from "@/public/images/carousel-icon-01.svg";
+import CarouselImg01 from "@/public/images/carousel-icon-03.svg";
 import CarouselImg02 from "@/public/images/carousel-icon-02.svg";
-import CarouselImg03 from "@/public/images/carousel-icon-03.svg";
-import CarouselImg04 from "@/public/images/carousel-icon-04.svg";
-import CarouselImg05 from "@/public/images/carousel-icon-05.svg";
+import CarouselImg03 from "@/public/images/carousel-icon-05.svg";
+
 import Highlighter, { HighlighterItem } from "./highlighter";
 
 // Import Swiper
 import Swiper, { Navigation } from "swiper";
 import "swiper/swiper.min.css";
-import { MoveLeft, MoveRight } from "lucide-react";
+import { ArrowRight, MoveLeft, MoveRight } from "lucide-react";
 Swiper.use([Navigation]);
 
 export default function TestimonialsCarousel() {
@@ -57,7 +55,7 @@ export default function TestimonialsCarousel() {
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <div>
               <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
-                {t("home.testimonialsCarousel.securityFirstPlatform")}
+                {t("home.testimonialsCarousel.badgeText")}
               </div>
             </div>
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
@@ -70,7 +68,7 @@ export default function TestimonialsCarousel() {
 
           {/* Carousel built with Swiper.js [https://swiperjs.com/] */}
           {/* * Custom styles in src/css/additional-styles/theme.scss */}
-          <div className="relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-slate-900 before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-slate-900 after:to-20%">
+          <div className="relative before:absolute before:inset-0 before:-translate-x-full before:z-20 before:bg-gradient-to-l before:from-transparent before:to-slate-900 before:to-20% after:absolute after:inset-0 after:translate-x-full after:z-20 after:bg-gradient-to-r after:from-transparent after:to-slate-900 after:to-20% cursor-default">
             <div className="testimonials-carousel swiper-container group">
               <Highlighter
                 className="swiper-wrapper w-fit"
@@ -102,10 +100,10 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          {t("home.testimonialsCarousel.customWebApps")}
+                          {t("home.testimonialsCarousel.specialty1")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          {t("home.testimonialsCarousel.everythingYouNeed")}
+                          {t("home.testimonialsCarousel.specialty1Description")}
                         </div>
                       </div>
                       <div className="text-right">
@@ -113,10 +111,10 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          {t("home.testimonialsCarousel.learnMore")}{" "}
-                          <MoveRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                          {t("home.testimonialsCarousel.buildSpecialty1")}{" "}
+                          <ArrowRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
-                          </MoveRight>
+                          </ArrowRight>
                         </a>
                       </div>
                     </div>
@@ -147,12 +145,10 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          {t("home.testimonialsCarousel.botDetection")}
+                          {t("home.testimonialsCarousel.specialty2")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          {t(
-                            "home.testimonialsCarousel.incorporateRichUserProfiling"
-                          )}
+                          {t("home.testimonialsCarousel.specialty2Description")}
                         </div>
                       </div>
                       <div className="text-right">
@@ -160,10 +156,10 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          {t("home.testimonialsCarousel.learnMore")}{" "}
-                          <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                          {t("home.testimonialsCarousel.buildSpecialty2")}{" "}
+                          <ArrowRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
-                          </span>
+                          </ArrowRight>
                         </a>
                       </div>
                     </div>
@@ -194,12 +190,10 @@ export default function TestimonialsCarousel() {
                       />
                       <div className="grow">
                         <div className="font-bold text-lg mb-1">
-                          {t("home.testimonialsCarousel.socialIntegrations")}
+                          {t("home.testimonialsCarousel.specialty3")}
                         </div>
                         <div className="text-slate-400 mb-3">
-                          {t(
-                            "home.testimonialsCarousel.incorporateRichUserProfiling"
-                          )}
+                          {t("home.testimonialsCarousel.specialty3Description")}
                         </div>
                       </div>
                       <div className="text-right">
@@ -207,10 +201,10 @@ export default function TestimonialsCarousel() {
                           className="text-sm font-medium text-slate-300 hover:text-white inline-flex items-center transition duration-150 ease-in-out group"
                           href="#0"
                         >
-                          {t("home.testimonialsCarousel.learnMore")}{" "}
-                          <span className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+                          {t("home.testimonialsCarousel.buildSpecialty3")}{" "}
+                          <ArrowRight className="tracking-normal text-indigo-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                             -&gt;
-                          </span>
+                          </ArrowRight>
                         </a>
                       </div>
                     </div>
@@ -221,7 +215,7 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Arrows */}
-          <div className="flex mt-8 justify-end">
+          {/* <div className="flex mt-8 justify-end">
             <button className="carousel-prev relative z-20 w-12 h-12 flex items-center justify-center group">
               <span className="sr-only">Previous</span>
               <svg
@@ -242,7 +236,7 @@ export default function TestimonialsCarousel() {
                 <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

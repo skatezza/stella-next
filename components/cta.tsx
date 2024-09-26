@@ -43,12 +43,12 @@ export default async function Cta() {
             </svg>
           </div>
           {/* Content */}
-          <div className="max-w-3xl mx-auto text-center">
-            <div>
+          <div className="max-w-2xl mx-auto text-center">
+            {/* <div>
               <div className="inline-flex font-medium bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-indigo-200 pb-3">
                 {t("home.experience.badgeText")}
               </div>
-            </div>
+            </div> */}
             <h2 className="h2 bg-clip-text text-transparent bg-gradient-to-r from-slate-200/60 via-slate-200 to-slate-200/60 pb-4">
               {t("home.experience.appTitle")}
             </h2>

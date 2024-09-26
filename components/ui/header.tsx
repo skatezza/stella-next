@@ -24,9 +24,6 @@ export default function Header() {
                   Pricing
                 </Link>
               </li>
-              <li className="ml-6">
-                <LocaleSwitcher />
-              </li>
             </ul>
           </nav>
         </div>
